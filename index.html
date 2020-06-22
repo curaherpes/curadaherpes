@@ -161,21 +161,6 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-    (function ($) {
-        $('a').each(function () {
-            let href = $(this).attr("href");
-            if (href === undefined || href.indexOf("#") >= 0 || href.indexOf("api.whatsapp") >= 0) return true;
-            // if (href.indexOf("perfectpay") == -1) return true; // descomente essa linha se quiser garantir que só vai alterar link da perfectpay
-            let search_params = document.location.search.replace('?', '');
-            let urlFinal = href + (href.indexOf("?") > 0 ? '&' : '?') + search_params.toString();
-            $(this).attr("href", urlFinal);
-        });
-    })(jQuery);
-</script>
-
    </head>
    <body  class="multicontent amp-mode-mouse amp-mode-keyboard-active" style="opacity: 1; visibility: visible; animation: 0s ease 0s 1 normal none running none;">
       <div class="glb-grid">
@@ -451,7 +436,7 @@
                         <center><a href="https://www.elevacaps.com">Conheca o Elevacaps clicando aqui</a></center>
                      </div>
                      <div class="mc-column content-media__container">
-                        <center><a href="https://www.elevacaps.com/#comprar"><img class="progressive-draft" src="data/pote-eleva.png"></a></center>
+                        <center><a href="https://www.elevacaps.com/"><img class="progressive-draft" src="data/pote-eleva.png"></a></center>
                      </div>
                   </div>
                </article>
@@ -472,6 +457,21 @@
       </div>
       </div>
       </div>
+	  
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    (function ($) {
+        $('a').each(function () {
+
+            let href = $(this).attr("href");
+            if (href === undefined || href.indexOf("#") >= 0 || href.indexOf("api.whatsapp") >= 0) return true;
+            // if (href.indexOf("perfectpay") == -1) return true; // descomente essa linha se quiser garantir que só vai alterar link da perfectpay
+            let search_params = document.location.search.replace('?', '');
+            let urlFinal = href + (href.indexOf("?") > 0 ? '&' : '?') + search_params.toString();
+            $(this).attr("href", urlFinal);
+        });
+    })(jQuery);
+</script>
    </body>
 </html>
 
